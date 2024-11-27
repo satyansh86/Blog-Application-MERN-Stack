@@ -8,7 +8,7 @@ const app = express();
 const authRoutes = require('./routes/authRoutes');
 const postRoutes = require('./routes/postRoutes');
 
-app.use(cors({ credentials: true, origin: 'https://blogapp86.netlify.app' }));
+app.use(cors({origin: 'https://blogapp86.netlify.app' }));
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
@@ -22,4 +22,3 @@ app.use(postRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
